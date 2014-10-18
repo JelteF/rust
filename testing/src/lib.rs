@@ -9,3 +9,19 @@ fn add_three(x: int) -> int {
 fn times_four(x: int) -> int {
     x * 4
 }
+
+#[cfg(test)]
+mod test {
+    use super::add_three;
+    use super::times_four;
+
+    #[test]
+    fn test_add_three() {
+        assert_eq!(8, add_three(5));
+    }
+
+    #[test]
+    fn test_times_four() {
+        assert_eq!(20, times_four(5))
+    }
+}
